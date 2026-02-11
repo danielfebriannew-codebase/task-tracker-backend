@@ -40,7 +40,9 @@ async function bootstrap() {
 
   // Swagger documentation
   const document = SwaggerModule.createDocument(app, getSwaggerConfig());
-  SwaggerModule.setup('api/docs', app, document);
+  SwaggerModule.setup('api/docs', app, document, {
+    useGlobalPrefix: false,
+  });
 
   // CORS
   app.enableCors();
